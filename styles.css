@@ -1,0 +1,171 @@
+/* Para declarar:
+    - Uma classe: .class{}
+    - Uma id: #id{}
+    - Um elemento: element{}
+    - o "*" é um seletor universal, usado para aplicar algum comando em todos os elementos que tiverem o mesmo nome por exemplo: main *{}. será aplicado os comandos para todos os main do programa, caso o * esteja sozinho as ordens são aplicas para todos os elementos do programa.
+
+*/
+
+
+*{ /*Os comandos adicionados aqui dentro, será aplicado para todo o programa*/ /*o navegar aplica alguns comandos de margens, etc de maneira automática, por isso é sempre bom remover*/
+    margin: 0; /*remove todas as margens das caixas*/ 
+    padding: 0; /*Removerá todos os padding que foram aplicados pelo prórprio navegador*/
+    box-sizing: border-box; /*Muda a maneira de como contar o tamanho da caixa. No elemento main eu coloquei um max-width: 580px, caso eu adicione um padding de 40px, seria somado os 40 com os 580, mas quando acrescento a opção de border-box, será considerado apenas o de 580px*/
+}
+
+ul{
+    list-style: none; /*Remove os pontinhos que fica ao lado das listas*/
+}
+
+body {
+    background-image: url(./assets/bg.jpg); /*adiciona a página, nesse caso adicionamos uma imagem para ser o plano de fundo*/
+    background-position: top center; /*Tem a função de centralizar a imagem. "top center" tem a função de ordenar a imagem ficar colada no topo e no centro*/
+    background-size: 100; /*Determina o espaçamento em 100% */
+    background-repeat: no-repeat; /*Tem a função de impedir a repetição da mesma imagem na página*/ 
+    background-color: #121214; /*Tem a função de determinar uma cor para o plano de fundo a página*/
+}
+
+body *{
+    font-family: 'inter', sans-serif; /*esse comando tem a função de modificar o estilo da letra. O estilo da letra é inter e caso não encontre essa fonte,a fonte será "sans-seriff"*/
+    line-height: 160%; /*sua função é modificar o espaçamento entre as linhas das caixas*/
+}
+/*
+main*{
+    border: 1px solid red;   esse comando permite adicionar bordas vermelhas ao seu programa, te permite visualizar melhor o espaçamento das estruturas do página
+}
+
+*/
+
+header{
+    padding-top: 32px; /*modifica a distancia da caixa com o margem superior da página*/
+    height: calc(120px + 32px);
+    /*"text-align: center;" todo conteúdo indentificado como propriedade de texto (a img é identificado como propriedade de texto), será alinhado para o centro. Porém se "div" não tem propriedades de texto*/   
+}
+
+header div{
+    width: 120px;
+    margin: auto; /*irá alinhar a imagem para o centro. margin: auto irá configurar a distância das bordas horizontais, de maneira automática*/
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%); /*a função será modificar a cor da caixa section, ela está podicionada atrás da section div*/
+
+    border-radius: 50%;
+    display: flex; /*Caso exista apenas um elemento, quando aplicar esse comando, as bordas, etc vão se organizar todos para ficar centralizado. Mas se existir mais de um elemento, ficarão um ao lado do outro, como ocorre na section ul*/
+    padding: 4px;
+    transition: transform .3s; /*Você define uma transição de visualização e o tempo que ocorre*/
+}
+
+header div:hover{
+    transform: scale(1.1) /*Permite ampliar a imagem na escala (1.1) ao passar o mouse em cima da imagem que o elemento header está se referindo*/
+}
+
+header div img{
+    width: 100%;
+    border-radius: 50%;        
+}
+
+main {
+    max-width: 580px; /*Função para definir o máximo de largura possível de tudo que está dentro do elemento escolhido, nesse caso foi o "main"*/
+    width: 90%; /*A largura do elemento irá ocupar a área que você definir, como a área definida foi 90%, o cartão na página deixará um pequeno espaço em cada ponta da página*/
+    margin: 32px auto; /*Esse comando tem a função de controlar as margens das caixas. caso eu acrescente dois valores, o primeiro identifica o espaçamento sup e inf, o segundo valor identifica o espaçamento das laterais.*/
+
+    display: grid; /*A função do grid dá permissão para aplicar o gap*/
+    gap: 24px; /*A função do gap é modificar a o tamanho do espaçamento entre as caixas da página*/
+
+    /* "margin-top: 32px;" espaçamento da margens da parte superior das caixas de tudo que esta dentro da main */
+}
+
+section{
+    color: white; /*como está no elemento section, a cor de todos os textos de todos os sections, serão modificadas para branco*/
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%); /*a função será modificar a cor da caixa section, ela está podicionada atrás da section div*/
+    padding-top: 4px;
+    border-radius: 10px;
+}
+
+section div{
+    background-color: #2A2634;  /*Modificar a cor de fundo do elemento (section div) */
+    padding: 32px; /*sua função é de fazer com que os elementos dentro da div, preencham de maneira organizada (os quatros cantos da caixa) o espaço dentro das caixas div na página*/
+    padding-top: 24px; /*modifica apenas a parte superior. nesse caso irá preencher 24px da parte superior das caixas*/
+    border-radius: 8px;
+}
+
+section h2{
+     letter-spacing: -0.47px; /*modifica o espaçamento entre as letras*/
+}
+
+section p{
+    letter-spacing: -0.18px;  
+    color: #A1A1AA;
+}
+
+section ul {
+    display: flex; /*A função do flex é permitir que as caixas de elementos do mesmo tipo fiquem uma ao lado da outra, exemplo: permite que uma section fique ao lado de outra section*/
+    flex-wrap: wrap; 
+    gap: 16px; /*A função do gap é modificar a o tamanho do espaçamento entre as caixas da página, nesse caso é entre as ul*/
+
+    margin-top: 24px; /*espaçamento da margens da parte superior das caixas das ul, nesse caso são as imagens*/
+}
+
+section ul li{ /*foi necessário especificar o elemento "section ul li" para que realizasse a apliação da imagem de forma individual, pq se fosse apenas "section ul" a ampliação seria realizada em conjunto, todas a imagens de cada ul de um só vez */
+    transition: transform .3s;
+}
+
+section ul li:hover{
+    transform: scale(1.1);
+}
+
+.games-list img{
+    width: 90px; /*modifica o tamanho da largura das imagens ou algum outro elemento, você escolhe, nesse caso foi escolhido "games-list img" as imagens da calsse games-list*/
+    border-radius: 8px; /*função de arredondar as bordas/vértices por pixel ou porcentagem*/
+}
+
+.channel-list img{
+    border-radius: 50%;
+    width: 70px;
+    border: 1px solid #443E54;
+}
+
+/* Animation */
+
+header div{
+    animation: fromTop .7s .2s backwards; /* o delay pode ser adicionado diretamento ao lado do tempo de loading da imagem: aniamtion: .7s 1s. 7s é o tempo de animação da imagem e 1s é o delay..... pode ser adicionado separadamente com um comando novo, logo abaixo do animation, exemplo: animation-delay: 1s; */
+    /* o backwards faz com que puxe as propriedades (propriedades estão encontradas no @keyframes) definidas para dar inicio antes de se iniciar o delay, daí já estará tudo carregado */
+}
+
+section {
+    animation: fromBottom .7s backwards;
+}
+
+main section:nth-child(1){ /* Esse "main section:nth-child(a section que vc desejar)" tem a função de fazer com que a section escolhida, carregue no tempo que eu deseja e de maneira individual, não irá carregar junto com as outras section, caso exista */
+    animation-delay: 0s;
+}
+
+main section:nth-child(2){
+    animation-delay: .3s;
+}
+
+main section:nth-child(3){
+    animation-delay: .6s;
+}
+
+@keyframes fromTop /* nome que desejar da animação, nos caso foi fromTop*/{
+    from{
+        opacity: 0;
+        transform: translatey(-30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+
+@keyframes fromBottom{
+    from{
+        opacity: 0;
+        transform: translatex(-30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
